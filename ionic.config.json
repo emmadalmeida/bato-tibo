@@ -1,0 +1,7 @@
+{
+  "name": "bato-tibo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
