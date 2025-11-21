@@ -22,6 +22,26 @@ export const routes: Routes = [
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
       {
+        path: 'bateaux',
+        loadComponent: () =>
+          import('../bateaux/bateaux.page').then((m) => m.BateauxPage),
+      },
+      {
+        path: 'recettes',
+        loadComponent: () =>
+          import('../recettes/recettes.page').then((m) => m.RecettesPage),
+      },
+      {
+        path: 'restaurants',
+        loadComponent: () =>
+          import('../restaurants/restaurants.page').then((m) => m.RestaurantsPage),
+      },
+      {
+        path: 'contact',
+        loadComponent: () =>
+          import('../contact/contact.page').then((m) => m.ContactPage),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',
