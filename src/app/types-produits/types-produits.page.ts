@@ -11,19 +11,32 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-recettes',
-  templateUrl: './recettes.page.html',
-  styleUrls: ['./recettes.page.scss'],
+  selector: 'app-types-produits',
+  templateUrl: './types-produits.page.html',
+  styleUrls: ['./types-produits.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList]
 })
-export class RecettesPage implements OnInit {
+export class TypesProduitsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) {
+
+  }
 
   ngOnInit() {
+  }
+
+  onLoadCategorie(type : number){
+    let extras = {
+      state : {
+        type: type
+      }
+    }
+    this.router.navigate(['/liste-produits'], extras)
   }
 
 }

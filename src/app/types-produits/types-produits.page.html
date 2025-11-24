@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Choisissez une catégorie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">types-produits</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-button shape="round" size="large" (click)="onLoadCategorie(0)">
+        <ion-icon slot="start" src="../../assets/svgs/fish-alt.svg"></ion-icon>
+        Poissons</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" shape="round" size="large" (click)="onLoadCategorie(1)">
+        <ion-icon slot="start" src="../../assets/svgs/mynaui_shell.svg"></ion-icon>
+        Coquillages</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" shape="round" size="large" (click)="onLoadCategorie(2)">
+        <ion-icon slot="start" src="../../assets/svgs/lucide_shrimp.svg"></ion-icon>
+        Crustacés
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" shape="round" size="large" (click)="onLoadCategorie(3)">
+        <ion-icon slot="start" src="../../assets/svgs/percentage.svg"></ion-icon>
+        Promotions
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

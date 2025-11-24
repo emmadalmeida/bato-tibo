@@ -5,11 +5,13 @@
 <!--    </ion-title>-->
 <!--  </ion-toolbar>-->
   <ion-toolbar>
-    <ion-button slot="start" fill="clear">
-      <ion-icon id="icon-tibo" src="../../assets/svgs/cart-fill-frame.svg"></ion-icon>
+    <ion-button slot="start" fill="clear" (click)="onLoadCart()">
+      <ion-icon src="../../assets/svgs/cart-fill-frame.svg"></ion-icon>
     </ion-button>
 
-    <!--        <ion-img src="../../assets/logos/bato_tibo_bleu_vague.svg"></ion-img>-->
+    <ion-title>
+      <ion-icon src="../../assets/logos/bato_tibo_bleu_vague.svg"></ion-icon>
+    </ion-title>
 
     <ion-button slot="end" fill="clear">
       <ion-icon src="../../assets/svgs/logout.svg"></ion-icon>

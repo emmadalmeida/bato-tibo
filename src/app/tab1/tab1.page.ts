@@ -9,6 +9,8 @@ import {
   IonIcon,
   IonText
 } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
@@ -18,5 +20,9 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonImg, IonButton, IonIcon, IonText],
 })
 export class Tab1Page {
-  constructor() {}
+  constructor(private router : Router) {}
+
+  onLoadCart(){
+    this.router.navigate(['/panier']);
+  }
 }
