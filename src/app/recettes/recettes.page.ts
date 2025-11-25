@@ -5,7 +5,7 @@ import {
   IonButton,
   IonContent,
   IonHeader,
-  IonIcon,
+  IonIcon, IonImg,
   IonItem,
   IonList,
   IonTitle,
@@ -17,7 +17,7 @@ import {
   templateUrl: './recettes.page.html',
   styleUrls: ['./recettes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonImg]
 })
 export class RecettesPage implements OnInit {
 

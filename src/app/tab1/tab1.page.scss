@@ -1,7 +1,13 @@
-//ion-img {
-//  height: 70%;
-//  width: 70%;
-//
-//}
+ion-img {
+  width: 40%;
+  --height: 40%;
+  object-fit: contain;
+  align-self: center;
 
+}
 
+ion-content {
+  flex-direction: row;
+  font-family: 'LeagueSpartan', sans-serif;
+  align-items: center;
+}

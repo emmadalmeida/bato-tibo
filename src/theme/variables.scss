@@ -1,2 +1,23 @@
+:root {
+  --ion-background-color: #ECF4E8
+}
+
+ion-button {
+  --background: #93BFC7 ;
+}
+
+@font-face {
+  font-family: 'LeagueSpartan';
+  src: url('../assets/fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body, ion-app {
+  font-family: 'LeagueSpartan', sans-serif;
+}
+
+
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/

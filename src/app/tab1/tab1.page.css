@@ -1,3 +1,14 @@
+ion-img {
+  width: 40%;
+  --height: 40%;
+  object-fit: contain;
+  align-self: center;
+}
 
+ion-content {
+  flex-direction: row;
+  font-family: "LeagueSpartan", sans-serif;
+  align-items: center;
+}
 
 /*# sourceMappingURL=tab1.page.css.map */

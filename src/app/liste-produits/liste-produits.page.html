@@ -7,21 +7,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
+      <ion-title size="large"></ion-title>
+
       <ion-title size="medium">Choisissez vos produits </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-list>
     @for(produit of listeProduits; track produit.name) {
-      <ion-item id="open-toast" (click)="addProduit(produit)">
-        <ion-button size="large" shape="round" expand="block">
-          <ion-label>{{produit.name}}</ion-label>
+      <ion-badge class="notif-badge">{{produit.price}}€</ion-badge>
+      <ion-button shape="round" id="open-modal" (click)="addProduit(produit)" size="large" expand="block">
+        <ion-label slot="start">{{produit.name}}</ion-label>
+      </ion-button>
 
-        </ion-button>
-          <ion-text slot="end"> {{produit.price}}€</ion-text>
-      </ion-item>
     }
 
   </ion-list>
+
 
 
 </ion-content>

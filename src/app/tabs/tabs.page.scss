@@ -1,1 +1,44 @@
+ion-tab-bar {
+  --background: #CBF3BB;
+}
+ion-tab-button {
+  --color: #000000;
+  --color-selected: #93BFC7;
 
+  .fish-icon,
+  .fork-knife,
+  .boat {
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color);
+  }
+
+  .fish-icon {
+    mask-image: url('../../assets/svgs/fish-alt.svg');
+    -webkit-mask-image: url('../../assets/svgs/fish-alt.svg');
+  }
+
+  .fork-knife {
+    mask-image: url('../../assets/svgs/fork-knife.svg');
+    -webkit-mask-image: url('../../assets/svgs/fork-knife.svg');
+  }
+
+  .boat {
+    mask-image: url('../../assets/svgs/directions_boat.svg');
+    -webkit-mask-image: url('../../assets/svgs/directions_boat.svg');
+  }
+
+  .bulles {
+    mask-image: url('../../assets/svgs/bulles_conv.svg');
+    -webkit-mask-image: url('../../assets/svgs/bulles_conv.svg');
+  }
+
+  &.tab-selected .fish-icon,
+  &.tab-selected .fork-knife,
+  &.tab-selected .boat {
+    background-color: var(--color-selected);
+  }
+}

@@ -5,12 +5,13 @@ import { ToastController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
-  IonButton,
+  IonBadge,
+  IonButton, IonButtons,
   IonContent,
   IonHeader,
   IonItem,
   IonLabel,
-  IonList,
+  IonList, IonModal, IonPicker, IonPickerColumn, IonPickerColumnOption,
   IonText,
   IonTitle, IonToast,
   IonToolbar
@@ -27,10 +28,10 @@ import {PanierItem} from "../models/panier-item";
   styleUrls: ['./liste-produits.page.scss'],
   standalone: true,
 
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonText, HttpClientModule, IonLabel, IonItem, IonButton, IonToast]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonText, HttpClientModule, IonLabel, IonItem, IonButton, IonToast, IonBadge, IonPicker, IonPickerColumn, IonPickerColumnOption, IonButtons, IonModal]
 })
 export class ListeProduitsPage implements OnInit {
-
+  currentValue = 1;
   type!: number;
   listeProduits : Produit[] = [];
   listePanier: PanierItem[] = [];
@@ -70,13 +71,25 @@ export class ListeProduitsPage implements OnInit {
 
     if (item) {
       item.qte += 1;
+      localStorage.setItem(item.produit.name, String(item.qte));
     } else {
-      this.listePanier.push({ produit, qte: 1 });
+      let pi : PanierItem = {
+        produit: produit,
+        qte: 1
+      }
+
+      localStorage.setItem(pi.produit.name, String(pi.qte));
+      this.listePanier.push(pi);
     }
 
     this.presentToast(produit);
     console.log(this.listePanier);
   }
+
+  onIonChange(event: CustomEvent) {
+    this.currentValue = event.detail.value;
+  }
+
 
   async presentToast(produit: Produit) {
     const toast = await this.toastCtrl.create({
