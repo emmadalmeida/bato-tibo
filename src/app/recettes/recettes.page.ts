@@ -11,13 +11,15 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
+import { CustomButtonComponent } from "../custom-button/custom-button.component";
+
 
 @Component({
   selector: 'app-recettes',
   templateUrl: './recettes.page.html',
   styleUrls: ['./recettes.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonImg]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonImg, CustomButtonComponent]
 })
 export class RecettesPage implements OnInit {
 
