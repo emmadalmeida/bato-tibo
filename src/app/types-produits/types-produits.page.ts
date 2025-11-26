@@ -18,7 +18,7 @@ import {PanierItem} from "../models/panier-item";
 @Component({
   selector: 'app-types-produits',
   templateUrl: './types-produits.page.html',
-  styleUrls: ['./types-produits.page.css'],
+  styleUrls: ['./types-produits.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonButtons]
 })

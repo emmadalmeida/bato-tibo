@@ -1,8 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>bateaux</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-tibo-header />
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -11,3 +7,28 @@
     </ion-toolbar>
   </ion-header>
 </ion-content>
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-button shape="round" size="large">
+        <ion-img class="recette-img" slot="start" src="../../assets/images/deLaBrise_icon.png"></ion-img>
+        De la Brise</ion-button>
+    </ion-item>
+    <ion-item>
+
+      <ion-button shape="round" size="large">
+        <ion-img slot="start" src="../../assets/images/gastMicher_icon.png"></ion-img>
+        Gast Micher</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button shape="round" size="large">
+        <ion-img slot="start" src="../../assets/images/saphir_icon.png"></ion-img>
+        Saphir</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button shape="round" size="large">
+        <ion-img slot="start" src="../../assets/images/aquilon_icon.png"></ion-img>
+        Aquilon
+      </ion-button>
+    </ion-item>
+  </ion-list>
