@@ -1,4 +1,4 @@
-import {Component, effect, OnInit} from '@angular/core';
+import { Component, effect, OnInit } from '@angular/core';
 import { ProduitsService } from '../services/produits.services'
 import { ToastController } from '@ionic/angular';
 
@@ -15,9 +15,10 @@ import {
   IonToolbar
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
-import {Produit} from "../models/produit";
+import { Produit } from "../models/produit";
 import { HttpClientModule } from '@angular/common/http';
-import {PanierItem} from "../models/panier-item";
+import { PanierItem } from "../models/panier-item";
+import { CustomButtonComponent } from '../custom-button/custom-button.component';
 
 
 @Component({
@@ -26,15 +27,15 @@ import {PanierItem} from "../models/panier-item";
   styleUrls: ['./liste-produits.page.scss'],
   standalone: true,
 
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, HttpClientModule, IonLabel, IonButton, IonBadge, IonModal]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, HttpClientModule, IonLabel, IonButton, IonBadge, IonModal, CustomButtonComponent]
 })
 export class ListeProduitsPage implements OnInit {
   currentValue = 1;
   type!: number;
-  listeProduits : Produit[] = [];
+  listeProduits: Produit[] = [];
   listePanier: PanierItem[] = [];
 
-  constructor(router : Router, private produitsServices: ProduitsService, private toastCtrl: ToastController
+  constructor(router: Router, private produitsServices: ProduitsService, private toastCtrl: ToastController
   ) {
     const nav = effect(() => {
       const signal = router.currentNavigation();
@@ -50,8 +51,7 @@ export class ListeProduitsPage implements OnInit {
         console.log(data);
         data.produits?.forEach(produit => {
 
-          if(produit.category === this.type)
-          {
+          if (produit.category === this.type) {
             this.listeProduits.push(produit)
           }
         })
@@ -74,7 +74,7 @@ export class ListeProduitsPage implements OnInit {
         JSON.stringify(item)
       );
     } else {
-      let pi : PanierItem = {
+      let pi: PanierItem = {
         produit: produit,
         qte: 1
       }

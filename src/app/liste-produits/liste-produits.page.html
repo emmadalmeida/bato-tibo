@@ -10,11 +10,8 @@
 
   <ion-list>
     @for(produit of listeProduits; track produit.name) {
-      <ion-badge class="notif-badge">{{produit.price}}€</ion-badge>
-      <ion-button shape="round" id="open-modal" (click)="addProduit(produit)" size="large" expand="block">
-        <ion-label slot="start">{{produit.name}}</ion-label>
-      </ion-button>
-
+    <ion-badge class="notif-badge">{{produit.price}}€</ion-badge>
+    <app-custom-button titre="{{produit.name}}" (click)="addProduit(produit)"></app-custom-button>
     }
 
   </ion-list>
