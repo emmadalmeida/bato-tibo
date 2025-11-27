@@ -1,14 +1,32 @@
 ion-item {
-
+  --inner-padding-end: 0; // optionnel
 }
+.item-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  width: 100%;
+}
+
 
 ion-header {
 
 }
 
 ion-content {
-  margin: 5px;
-  font-family: "LeagueSpartan";
+  --padding-start: 25px;
+  --padding-end: 25px;
+  --ion-font-family: "LeagueSpartan";
+}
+
+.item-btns {
+
 }
 
 h1 {
