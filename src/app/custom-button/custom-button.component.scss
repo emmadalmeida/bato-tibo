@@ -1,12 +1,15 @@
 ion-img {
-    width: 20%;
-    height: 20%;
-    margin-left: -25px;
+    width: 17%;
+    height: 17%;
     margin-right: 15px;
+    margin-left: -15px;
 }
 
 ion-button {
     width: 100%;
-    --padding-top: 2%;
-    --padding-bottom: 2%;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    justify-content: flex-start;
 }
