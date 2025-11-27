@@ -20,4 +20,8 @@ export class TiboHeaderComponent  implements OnInit {
   onLoadCart(){
     this.router.navigate(['/panier']);
   }
+
+  onLoadAccueil(){
+    this.router.navigate(['/accueil']);
+  }
 }

@@ -10,4 +10,15 @@ ion-button {
   --padding-bottom: 10px;
 }
 
+ion-content {
+  margin: 5px;
+  font-family: "LeagueSpartan", serif !important;
+}
+
+h1 {
+  margin-top: 35px;
+  font-size: 250%;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=bateaux.page.css.map */

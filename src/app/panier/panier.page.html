@@ -5,19 +5,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Panier</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1 >Panier</h1>
 
+
+  <ion-list>
   @if(panierList.length === 0){
     <ion-text>Votre panier est vide.</ion-text>
   }
 
   @if(panierList.length > 0){
-
+    <ion-item></ion-item>
   }
+</ion-list>
 
   <ion-button>
     <ion-label>

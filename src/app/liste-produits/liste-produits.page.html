@@ -5,13 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large"></ion-title>
 
-      <ion-title size="medium">Choisissez vos produits </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1>Choisissez vos produits </h1>
+
   <ion-list>
     @for(produit of listeProduits; track produit.name) {
       <ion-badge class="notif-badge">{{produit.price}}€</ion-badge>
