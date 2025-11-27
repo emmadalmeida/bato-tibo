@@ -13,8 +13,7 @@ import {
 } from '@ionic/angular/standalone';
 import { TiboHeaderComponent } from '../tibo-header/tibo-header.component';
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bateaux',
@@ -25,9 +24,12 @@ import { CustomButtonComponent } from "../custom-button/custom-button.component"
 })
 export class BateauxPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goToPageBateauParti() {
+    this.router.navigate(['/page-bateau-particulier']);
+  }
 }

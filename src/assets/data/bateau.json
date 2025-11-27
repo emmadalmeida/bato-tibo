@@ -1,0 +1,12 @@
+{
+"bateau" : [
+  {
+    "id": 1,
+    "name": "De la Brise",
+    "proprietaire": "Jean Dupont",
+    "localisation": "Marseille, France",
+    "contact": "06 12 34 56 78",
+    "img": "assets/images/deLaBrise_icon.png"
+  }
+]
+}

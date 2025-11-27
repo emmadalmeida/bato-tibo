@@ -14,14 +14,11 @@ import {
   imports: [CommonModule, FormsModule, IonButton, IonItem, IonImg]
 })
 export class CustomButtonComponent implements OnInit {
-  @Input() url: string = '';
-  @Input() img: string = '';
   @Input() titre: string = '';
   @Input() urlimg: string = '';
-  @Input() src: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
 }
