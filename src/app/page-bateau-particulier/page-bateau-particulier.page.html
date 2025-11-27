@@ -1,17 +1,16 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>page-bateau-particulier</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
   @for(Bateau of listeBateaux; track Bateau.nom) {
+    <div class="bateau-content">
+      <ion-img [src]="Bateau.imgUrl"></ion-img>
+    </div>
     <ion-item>
+      <div>
       <h1>{{Bateau.nom}}</h1>
-      <ion-img [src]="Bateau.imgUrl" class="icon-bateau"></ion-img>
       <h3>{{Bateau.proprietaire}}</h3>
       <h3>{{Bateau.localisation}}</h3>
       <h3>{{Bateau.contact}}</h3>
+      </div>
     </ion-item>
   }
 </ion-content>
