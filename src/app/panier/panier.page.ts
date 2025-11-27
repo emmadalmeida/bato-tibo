@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 import {
   IonAlert,
   IonButton,
-  IonContent,
-  IonHeader, IonItem,
+  IonContent, IonDatetime, IonDatetimeButton,
+  IonHeader, IonImg, IonItem,
   IonLabel,
-  IonList,
+  IonList, IonModal,
   IonText,
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
-import type { OverlayEventDetail } from '@ionic/core';
+import type {OverlayEventDetail} from '@ionic/core';
 import {PanierItem} from "../models/panier-item";
 
 @Component({
@@ -20,12 +20,15 @@ import {PanierItem} from "../models/panier-item";
   templateUrl: './panier.page.html',
   styleUrls: ['./panier.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonLabel, IonText, IonList, IonItem, IonAlert]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonLabel, IonText, IonList, IonItem, IonAlert, IonImg, IonDatetimeButton, IonModal, IonDatetime]
 })
 export class PanierPage implements OnInit {
 
   panierList: PanierItem[] = [];
-  constructor() { }
+  somme: number = 0;
+
+  constructor() {
+  }
 
   ngOnInit() {
     this.loadPaniers()
@@ -41,12 +44,11 @@ export class PanierPage implements OnInit {
       const value = localStorage.getItem(key);
       if (!value) continue;
 
-      try {
-        const item = JSON.parse(value);
-        this.panierList.push(item);
-      } catch (e) {
-        console.warn("Invalid JSON in localStorage for key:", key);
-      }
+
+      const item = JSON.parse(value);
+      this.panierList.push(item);
+      this.somme += item.produit.price*item.qte
+
     }
   }
 
@@ -63,7 +65,7 @@ export class PanierPage implements OnInit {
       },
     },
     {
-      text: 'OK',
+      text: 'Supprimer',
       role: 'confirm',
       handler: () => {
         console.log('Alert confirmed');

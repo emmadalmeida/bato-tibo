@@ -8,18 +8,29 @@
   <h1 >Panier</h1>
 
 
-  <ion-list>
 
     @if (panierList.length === 0) {
       <ion-text>Votre panier est vide.</ion-text>
     }
 
     @if (panierList.length > 0) {
+      <ion-list>
+
       @for (item of panierList; track item.produit.id) {
+
         <ion-item>
           <div class="item-wrapper">
-            <div class="item-line">
-              {{ item.produit.name }} - qté : {{ item.qte }}
+            <div class="item-name-qte-img">
+              <img src="../assets/images/barRecette_icon.png" alt=""/>
+              <ion-text>
+                {{ item.produit.name }}
+              </ion-text>
+              <ion-text>
+                Qté : {{ item.qte }}
+              </ion-text>
+            </div>
+            <div class="item-prix">
+              {{item.qte}}x{{item.produit.price}}€ : {{item.qte*item.produit.price}}€
             </div>
 
             <div class="item-btns">
@@ -28,17 +39,33 @@
             </div>
           </div>
         </ion-item>
-
       }
-      <ion-button>
-        <ion-label>
-          Valider la commande
-        </ion-label>
-      </ion-button>
+      </ion-list>
+      <div class="footer-panier">
+        <ion-text>Total : {{somme}}€ </ion-text>
+
+        <ion-text>Lieu de livraison : </ion-text>
+
+        <div class="date-heure">
+          <ion-text>Date de livraison : </ion-text>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </div>
+
+
+        <ion-button expand="block">
+          <ion-label>Valider la commande</ion-label>
+        </ion-button>
+      </div>
+
     }
 
 
-  </ion-list>
   <ion-alert
     trigger="confirmSupp"
     header="Confirmer"
