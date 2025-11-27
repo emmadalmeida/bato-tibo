@@ -11,7 +11,7 @@
   <ion-list>
     @for(produit of listeProduits; track produit.name) {
     <ion-badge class="notif-badge">{{produit.price}}€</ion-badge>
-    <app-custom-button titre="{{produit.name}}" (click)="addProduit(produit)"></app-custom-button>
+    <app-custom-button titre="{{produit.name}}" (click)="openQuantityPicker(produit)"></app-custom-button>
     }
 
   </ion-list>
