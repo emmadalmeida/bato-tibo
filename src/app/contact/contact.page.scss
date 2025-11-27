@@ -2,8 +2,9 @@
   text-align: center;
 }
 
-ion-img {
+.contact {
   padding: 5% 20%;
+  padding-bottom: 50px;
 }
 
 ion-icon {
@@ -14,4 +15,10 @@ ion-icon {
 
 ion-button {
   margin: 0 10px;
+}
+
+.logo {
+padding: 5% 20%;
+width: 85%;
+justify-self: center;
 }
