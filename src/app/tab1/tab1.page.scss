@@ -1,13 +1,22 @@
 ion-img {
-  width: 40%;
-  --height: 40%;
+  --width: 45%;
+  --height: 45%;
   object-fit: contain;
-  align-self: center;
-
+  justify-self: center;
 }
 
 ion-content {
-  flex-direction: row;
+  display: flex;
   font-family: 'LeagueSpartan', sans-serif;
   align-items: center;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+ion-img,
+.ion-text {
+  align-items: center;
+  text-align: center;
+  justify-items: center;
 }
