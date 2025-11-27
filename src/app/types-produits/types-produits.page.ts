@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
-  IonButton, IonButtons,
+  IonButton,
   IonContent,
   IonHeader,
   IonIcon,
@@ -20,7 +20,7 @@ import {PanierItem} from "../models/panier-item";
   templateUrl: './types-produits.page.html',
   styleUrls: ['./types-produits.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonButtons]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList]
 })
 export class TypesProduitsPage implements OnInit {
 

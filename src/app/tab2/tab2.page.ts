@@ -6,16 +6,14 @@ import {
   IonContent,
   IonList,
   IonItem,
-  IonLabel,
-  IonButton, IonIcon, IonImg
+  IonButton, IonIcon
 } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonList, IonItem, IonLabel, IonButton, IonIcon, IonImg]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonButton, IonIcon]
 })
 export class Tab2Page {
 

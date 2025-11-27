@@ -8,7 +8,6 @@ import {
   IonIcon,
   IonImg,
   IonText,
-  IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 
@@ -17,7 +16,7 @@ import {
   templateUrl: './accueil.page.html',
   styleUrls: ['./accueil.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonImg, IonText]
+  imports: [IonContent, IonHeader, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonImg, IonText]
 })
 export class AccueilPage implements OnInit {
 

@@ -6,14 +6,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   IonBadge,
-  IonButton, IonButtons,
+  IonButton,
   IonContent,
   IonHeader,
-  IonItem,
   IonLabel,
-  IonList, IonModal, IonPicker, IonPickerColumn, IonPickerColumnOption,
-  IonText,
-  IonTitle, IonToast,
+  IonList, IonModal,
+  IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
@@ -28,7 +26,7 @@ import {PanierItem} from "../models/panier-item";
   styleUrls: ['./liste-produits.page.scss'],
   standalone: true,
 
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, IonText, HttpClientModule, IonLabel, IonItem, IonButton, IonToast, IonBadge, IonPicker, IonPickerColumn, IonPickerColumnOption, IonButtons, IonModal]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonList, HttpClientModule, IonLabel, IonButton, IonBadge, IonModal]
 })
 export class ListeProduitsPage implements OnInit {
   currentValue = 1;

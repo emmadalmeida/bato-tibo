@@ -5,7 +5,7 @@ import {
   IonButton,
   IonContent,
   IonHeader,
-  IonIcon, IonImg,
+  IonImg,
   IonItem,
   IonList,
   IonTitle,
@@ -19,7 +19,7 @@ import { TiboHeaderComponent } from '../tibo-header/tibo-header.component';
   templateUrl: './bateaux.page.html',
   styleUrls: ['./bateaux.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonImg, TiboHeaderComponent]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonItem, IonList, IonImg, TiboHeaderComponent]
 })
 export class BateauxPage implements OnInit {
 
