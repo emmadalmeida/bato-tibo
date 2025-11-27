@@ -136,20 +136,31 @@ export class PanierPage implements OnInit {
 
   public alertButtons = [
     {
-      text: 'Annuler',
+      text: 'Non',
       role: 'cancel',
       handler: () => {
         console.log('Alert canceled');
       },
     },
     {
-      text: 'Supprimer',
+      text: 'Oui',
       role: 'confirm',
       handler: () => {
-        console.log('Alert confirmed');
+        this.envoiAlert();
+        localStorage.clear()
+        this.panierList = [];
       },
     },
   ];
+  async envoiAlert() {
+    const alert = await this.alertController.create({
+      header: 'Commande envoyée',
+      message: 'Votre commande a bien été envoyée.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 
   setResult(event: CustomEvent<OverlayEventDetail>) {
     console.log(`Dismissed with role: ${event.detail.role}`);

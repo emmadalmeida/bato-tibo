@@ -63,7 +63,7 @@
         </div>
 
 
-        <ion-button expand="block">
+        <ion-button expand="block" id="valider">
           <ion-label>Valider la commande</ion-label>
         </ion-button>
       </div>
@@ -93,4 +93,11 @@
     </ng-template>
   </ion-modal>
 
+  <ion-alert
+    trigger="valider"
+    header="Confirmtion"
+    [buttons]="alertButtons"
+    message="Envoyer votre commande de {{somme}}€ à Thibault ?"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
 </ion-content>
