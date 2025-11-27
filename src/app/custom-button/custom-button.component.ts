@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -14,10 +14,10 @@ import {
   imports: [CommonModule, FormsModule, IonButton, IonItem, IonImg]
 })
 export class CustomButtonComponent implements OnInit {
-  url! : string;
-  img!: string;
-  titre!: string;
-  urlimg!: string;
+  @Input() url: string = '';
+  @Input() img: string = '';
+  @Input() titre: string = '';
+  @Input() urlimg: string = '';
 
   constructor() { }
 
