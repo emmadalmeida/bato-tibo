@@ -1,7 +1,7 @@
 import { Component, effect, OnInit } from '@angular/core';
 import { ProduitsService } from '../services/produits.services'
 import { ToastController } from '@ionic/angular';
-
+import { PickerController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -35,7 +35,11 @@ export class ListeProduitsPage implements OnInit {
   listeProduits: Produit[] = [];
   listePanier: PanierItem[] = [];
 
-  constructor(router: Router, private produitsServices: ProduitsService, private toastCtrl: ToastController
+  constructor(router: Router,
+    private produitsServices: ProduitsService,
+    private toastCtrl: ToastController,
+    private pickerCtrl: PickerController
+
   ) {
     const nav = effect(() => {
       const signal = router.currentNavigation();
@@ -60,9 +64,51 @@ export class ListeProduitsPage implements OnInit {
     })
   }
 
-  loadListeProduits() {
-
+  async openQuantityPicker(produit: Produit) {
+    const picker = await this.pickerCtrl.create({
+      columns: [
+        {
+          name: 'qte',
+          options: Array.from({ length: 20 }, (_, i) => ({
+            text: `${i + 1}`,
+            value: i + 1
+          }))
+        }
+      ],
+      buttons: [
+        { text: 'Annuler', role: 'cancel' },
+        {
+          text: 'OK',
+          handler: (selected) => {
+            const qty = selected.qte.value;
+            this.addProduitWithQty(produit, qty);
+          }
+        }
+      ]
+    });
+    await picker.present();
   }
+
+  addProduitWithQty(produit: Produit, qte: number) {
+    const item = this.listePanier.find(p => p.produit.id === produit.id);
+
+    if (item) {
+      item.qte += qte;
+      localStorage.setItem(item.produit.name, JSON.stringify(item));
+    } else {
+      const pi: PanierItem = {
+        produit: produit,
+        qte: qte
+      };
+      localStorage.setItem(pi.produit.name, JSON.stringify(pi));
+      this.listePanier.push(pi);
+    }
+    this.presentToast(produit)
+
+    console.log(this.listePanier);
+  }
+
+
 
   addProduit(produit: Produit) {
     const item = this.listePanier.find(p => p.produit.id === produit.id);
@@ -96,7 +142,7 @@ export class ListeProduitsPage implements OnInit {
 
   async presentToast(produit: Produit) {
     const toast = await this.toastCtrl.create({
-      message: `${produit.name} ajouté au panier.`,
+      message: `${produit.name} ajoutÃ© au panier.`,
       duration: 3000,
       position: 'bottom'
     });
