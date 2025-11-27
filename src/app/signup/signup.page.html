@@ -1,15 +1,17 @@
 <ion-content [fullscreen]="true">
   <ion-img src="../assets/logos/bato_tibo_logo_bleu.png" class="logo"></ion-img>
-  <h2 class="title-login">Connexion</h2>
+  <h2 class="title-login">Inscription</h2>
   <ion-input placeholder="Identifiant" class="identifiant"></ion-input>
     <ion-input placeholder="Mot de passe" class="mot-de-passe"></ion-input>
+        <ion-input placeholder="Confirmer le mot de passe" class="confirmer"></ion-input>
+
 
   <ion-button shape="round" class="connect-button">
-    Se connecter
+    S'inscrire
   </ion-button>
 
-  <a routerLink="/signup"> <p class="Inscription-button" >
-    Pas encore de compte ? <br>
-    <u>Inscrivez vous</u></p></a>
+  <a routerLink="/login"> <p class="Inscription-button" >
+    Déja un compte ? <br>
+    <u>Connectez vous</u></p></a>
 
 </ion-content>
