@@ -19,7 +19,11 @@ import {
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonIcon, IonItem, IonList, IonImg]
 })
 export class CustomButtonComponent implements OnInit {
-
+  url! : string;
+  img!: string;
+  titre!: string;
+  urlimg!: string;
+  
   constructor() { }
 
   ngOnInit() { }
