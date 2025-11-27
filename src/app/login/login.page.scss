@@ -29,12 +29,22 @@ ion-input {
 
 .connect-button {
     width: 80%;
-    margin-top: 30px;
+    margin-top: 50px;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 200px;
+    justify-self: center;
+    display: block;
 }
 
 .Inscription-button{
     background-color: transparent !important;
+    text-align: center !important;
+    padding-top: 20px;
+    color: #323232;
+}
+
+h2{
+    text-align: center;
 }
