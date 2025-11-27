@@ -14,8 +14,8 @@ ion-button {
   font-display: swap;
 }
 
-body, ion-app {
-  font-family: 'LeagueSpartan', sans-serif;
+ion-app {
+  --ion-font-family: 'LeagueSpartan', sans-serif;
 }
 
 h1 {
