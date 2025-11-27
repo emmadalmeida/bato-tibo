@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonButton, IonIcon, IonHeader, IonToolbar, IonImg } from '@ionic/angular/standalone';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-tibo-header',
@@ -9,19 +9,19 @@ import {Router} from "@angular/router";
   standalone: true,
   imports: [IonButton, IonIcon, IonHeader, IonToolbar, IonImg],
 })
-export class TiboHeaderComponent  implements OnInit {
+export class TiboHeaderComponent implements OnInit {
 
-  constructor(private router : Router) {
+  constructor(private router: Router) {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  onLoadCart(){
+  onLoadCart() {
     this.router.navigate(['/panier']);
   }
 
-  onLoadAccueil(){
-    this.router.navigate(['/accueil']);
+  onLoadAccueil() {
+    this.router.navigate(['/tab1']);
   }
 }
