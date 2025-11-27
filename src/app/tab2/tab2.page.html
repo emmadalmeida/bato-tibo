@@ -7,39 +7,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <h1>Nos restaurants partenaires</h1>
+  <h1>Nos restaurants partenaires</h1>
 
 
   <ion-list lines="none">
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-icon slot="start" src="../../assets/images/barRecette@2x.png"></ion-icon>
+    <ion-list lines="none">
+      <app-custom-button titre="Bistrot des Gascons"
+        urlimg="../../assets/images/homardRecette_icon.png"></app-custom-button>
 
-        Pokémon Yellow</ion-button>
-    </ion-item>
-    <ion-item>
+      <app-custom-button titre="Les fous de l'île"
+        urlimg="../../assets/images/saintJacques_icon.png"></app-custom-button>
 
-      <ion-button shape="round" size="large">
-        <ion-icon slot="start" src="../../assets/images/barRecette@2x.png"></ion-icon>
-        Pokémon Yellow</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-icon slot="start" src="../../assets/images/barRecette@2x.png"></ion-icon>
-        Pokémon Yellow</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-icon slot="start" src="../../assets/images/barRecette@3x.png"></ion-icon>
-        Pokémon Yellow
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-icon slot="start" src="../../assets/images/barRecette@3x.png"></ion-icon>
-        Pokémon Yellow
-      </ion-button>
-    </ion-item>
+      <app-custom-button titre="Bistrot Landais" urlimg="../../assets/images/barRecette_icon.png"></app-custom-button>
+
+      <app-custom-button titre="Villa 9-Trois" urlimg="../../assets/images/tourteau.png"></app-custom-button>
+
+      <app-custom-button titre="Bistrot du sommelier" urlimg="../../assets/images/tourteau.png"></app-custom-button>
+
+      <app-custom-button titre="Villa 9-Trois" urlimg="../../assets/images/tourteau.png"></app-custom-button>
+
+    </ion-list>
   </ion-list>
 
 

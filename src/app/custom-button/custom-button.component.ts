@@ -18,6 +18,7 @@ export class CustomButtonComponent implements OnInit {
   @Input() img: string = '';
   @Input() titre: string = '';
   @Input() urlimg: string = '';
+  @Input() src: string = '';
 
   constructor() { }
 
