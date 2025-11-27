@@ -12,6 +12,8 @@ import {
   IonToolbar
 } from '@ionic/angular/standalone';
 import { TiboHeaderComponent } from '../tibo-header/tibo-header.component';
+import { CustomButtonComponent } from "../custom-button/custom-button.component";
+
 
 
 @Component({
@@ -19,7 +21,7 @@ import { TiboHeaderComponent } from '../tibo-header/tibo-header.component';
   templateUrl: './bateaux.page.html',
   styleUrls: ['./bateaux.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonItem, IonList, IonImg, TiboHeaderComponent]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonItem, IonList, IonImg, TiboHeaderComponent, CustomButtonComponent]
 })
 export class BateauxPage implements OnInit {
 

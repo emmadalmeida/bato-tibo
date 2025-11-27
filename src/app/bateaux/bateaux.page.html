@@ -1,31 +1,14 @@
 <app-tibo-header />
 
 <ion-content [fullscreen]="true">
-  <h1>Bateaux</h1>
+  <h1>Nos bateaux partenaires</h1>
 
   <ion-list lines="none">
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-img class="recette-img" slot="start" src="../../assets/images/deLaBrise_icon.png"></ion-img>
-        De la Brise</ion-button>
-    </ion-item>
-    <ion-item>
+    <app-custom-button titre="De la Brise" urlimg="assets/images/deLaBrise_icon.png"></app-custom-button>
+    <app-custom-button titre="Gast Micher" urlimg="assets/images/gastMicher_icon.png"></app-custom-button>
 
-      <ion-button shape="round" size="large">
-        <ion-img slot="start" src="../../assets/images/gastMicher_icon.png"></ion-img>
-        Gast Micher</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-img slot="start" src="../../assets/images/saphir_icon.png"></ion-img>
-        Saphir</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button shape="round" size="large">
-        <ion-img slot="start" src="../../assets/images/aquilon_icon.png"></ion-img>
-        Aquilon
-      </ion-button>
-    </ion-item>
-  </ion-list>
-</ion-content>
+    <app-custom-button titre="Saphir" urlimg="assets/images/saphir_icon.png"></app-custom-button>
+
+    <app-custom-button titre="Aquilon" urlimg="assets/images/aquilon_icon.png"></app-custom-button>
+
 
