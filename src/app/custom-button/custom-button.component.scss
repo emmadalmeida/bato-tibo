@@ -2,14 +2,22 @@ ion-img {
     width: 17%;
     height: 17%;
     margin-right: 15px;
-    margin-left: -15px;
+    margin-left: 15px;
 }
 
-ion-button {
+div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: #93BFC7;
     width: 100%;
-    --padding-top: 5px;
-    --padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-top: 5%;
     margin-bottom: 5%;
-    justify-content: flex-start;
+    border-radius: 99px;
+}
+
+.button-inner {
+    justify-content: flex-start !important;
 }
