@@ -40,6 +40,10 @@ export const routes: Routes = [
   {
     path: 'page-bateau-particulier',
     loadComponent: () => import('./page-bateau-particulier/page-bateau-particulier.page').then( m => m.PageBateauParticulierPage)
+  },  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
+
 
 ];
