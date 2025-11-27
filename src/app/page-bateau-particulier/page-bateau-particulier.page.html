@@ -1,18 +1,15 @@
-
-
-
 <ion-content [fullscreen]="true">
-  @for(Bateau of listeBateaux; track Bateau.nom) {
-    <h1>{{Bateau.nom}}</h1>
+  <ng-container>
+    <h1>{{ selectedBateau?.nom }}</h1>
     <div class="bateau-content">
-      <ion-img [src]="Bateau.imgUrl"></ion-img>
+      <ion-img [src]="selectedBateau?.imgUrl"></ion-img>
     </div>
     <ion-item>
       <div>
-      <h3><b>Proprietaire :</b> {{Bateau.proprietaire}}</h3>
-      <h3><b>Localisation :</b> {{Bateau.localisation}}</h3>
-      <h3><b>Contact :</b> {{Bateau.contact}}</h3>
+        <h3><b>Proprietaire :</b> {{ selectedBateau?.proprietaire }}</h3>
+        <h3><b>Localisation :</b> {{ selectedBateau?.localisation }}</h3>
+        <h3><b>Contact :</b> {{ selectedBateau?.contact }}</h3>
       </div>
     </ion-item>
-  }
+  </ng-container>
 </ion-content>

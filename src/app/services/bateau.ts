@@ -11,6 +11,6 @@ export class BateauService {
   constructor(private http: HttpClient) { }
 
   getBateau() {
-    return this.http.get<{bateau : Bateau[]}>('../assets/data/bateau.json')
-  }  
+    return this.http.get<{ bateau: Bateau[] }>('../assets/data/bateau.json')
+  }
 }

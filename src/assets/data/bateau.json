@@ -1,12 +1,36 @@
 {
-"bateau" : [
-  {
-    "id": 1,
-    "nom": "De la Brise",
-    "proprietaire": "Jean Dupont",
-    "localisation": "Marseille, France",
-    "contact": "06 12 34 56 78",
-    "imgUrl": "assets/images/deLaBrise_icon.png"
-  }
-]
+  "bateau": [
+    {
+      "id": 1,
+      "nom": "De la Brise",
+      "proprietaire": "Jean Dupont",
+      "localisation": "Marseille, France",
+      "contact": "06 12 34 56 78",
+      "imgUrl": "assets/images/deLaBrise_icon.png"
+    },
+    {
+      "id": 2,
+      "nom": "Gast Micher",
+      "proprietaire": "Jean Dupont",
+      "localisation": "Marseille, France",
+      "contact": "06 12 34 56 78",
+      "imgUrl": "assets/images/gastMicher_icon.png"
+    },
+    {
+      "id": 3,
+      "nom": "Saphir",
+      "proprietaire": "Jean Dupont",
+      "localisation": "Marseille, France",
+      "contact": "06 12 34 56 78",
+      "imgUrl": "assets/images/saphir_icon.png"
+    },
+    {
+      "id": 4,
+      "nom": "Aquilon",
+      "proprietaire": "Jean Dupont",
+      "localisation": "Marseille, France",
+      "contact": "06 12 34 56 78",
+      "imgUrl": "assets/images/aquilon_icon.png"
+    }
+  ]
 }

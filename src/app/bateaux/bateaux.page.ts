@@ -29,7 +29,8 @@ export class BateauxPage implements OnInit {
   ngOnInit() {
   }
 
-  goToPageBateauParti() {
-    this.router.navigate(['/page-bateau-particulier']);
+  goToPageBateauParti(nomBateau: string) {
+    // Navigue vers la page du bateau particulier en passant `nomBateau` comme paramètre de route
+    this.router.navigate(['/page-bateau-particulier'], { state: { nomBateau } });
   }
 }

@@ -15,15 +15,31 @@ import { TabsPage } from '../tabs/tabs.page';
 })
 export class PageBateauParticulierPage implements OnInit {
 
-  listeBateaux: Bateau[] = [];
-  constructor(private bateauService : BateauService) { 
+  listeBateau: Bateau[] = [];
+  selectedBateau?: Bateau;
+
+  constructor(private bateauService: BateauService) {
   }
 
   ngOnInit() {
+    const nomFromState = history.state.nomBateau;
+
     this.bateauService.getBateau().subscribe({
       next: (data) => {
-        this.listeBateaux = data.bateau;
-      }
-        });
+        this.listeBateau = data.bateau;
+
+        if (nomFromState) {
+          this.selectedBateau = this.listeBateau.find((b) => b.nom === nomFromState);
+        }
+
+        // Fallback: si rien trouvé, prend le premier bateau (ou reste undefined)
+        if (!this.selectedBateau && this.listeBateau.length > 0) {
+          this.selectedBateau = this.listeBateau[0];
+        }
+
+        console.log('selectedBateau', this.selectedBateau);
+      },
+      error: (err) => console.error(err)
+    });
   }
 }
