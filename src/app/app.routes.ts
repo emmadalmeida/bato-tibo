@@ -6,8 +6,8 @@ export const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
   },
   {
-    path: 'accueil',
-    loadComponent: () => import('./accueil/accueil.page').then( m => m.AccueilPage)
+    path: 'tab1',
+    loadComponent: () => import('./tab1/tab1.page').then( m => m.Tab1Page)
   },
   {
     path: 'bateaux',
@@ -36,7 +36,8 @@ export const routes: Routes = [
   {
     path: 'liste-produits',
     loadComponent: () => import('./liste-produits/liste-produits.page').then( m => m.ListeProduitsPage)
-  },  {
+  },
+  {
     path: 'page-bateau-particulier',
     loadComponent: () => import('./page-bateau-particulier/page-bateau-particulier.page').then( m => m.PageBateauParticulierPage)
   },

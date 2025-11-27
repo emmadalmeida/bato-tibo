@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonImg, IonItem } from '@ionic/angular/standalone';
 import { BateauService } from '../services/bateau';
 import { Bateau } from '../models/bateau';
+import { TabsPage } from '../tabs/tabs.page';
 
 @Component({
   selector: 'app-page-bateau-particulier',
   templateUrl: './page-bateau-particulier.page.html',
   styleUrls: ['./page-bateau-particulier.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonImg, IonItem]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonImg, IonItem, TabsPage]
 })
 export class PageBateauParticulierPage implements OnInit {
 
