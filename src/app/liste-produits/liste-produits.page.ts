@@ -69,14 +69,19 @@ export class ListeProduitsPage implements OnInit {
 
     if (item) {
       item.qte += 1;
-      localStorage.setItem(item.produit.name, String(item.qte));
+      localStorage.setItem(
+        item.produit.name,
+        JSON.stringify(item)
+      );
     } else {
       let pi : PanierItem = {
         produit: produit,
         qte: 1
       }
-
-      localStorage.setItem(pi.produit.name, String(pi.qte));
+      localStorage.setItem(
+        pi.produit.name,
+        JSON.stringify(pi)
+      );
       this.listePanier.push(pi);
     }
 

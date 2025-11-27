@@ -9,18 +9,41 @@
 
 
   <ion-list>
-  @if(panierList.length === 0){
-    <ion-text>Votre panier est vide.</ion-text>
-  }
 
-  @if(panierList.length > 0){
-    <ion-item></ion-item>
-  }
-</ion-list>
+    @if (panierList.length === 0) {
+      <ion-text>Votre panier est vide.</ion-text>
+    }
 
-  <ion-button>
-    <ion-label>
-      Valider la commande
-    </ion-label>
-  </ion-button>
+    @if (panierList.length > 0) {
+      @for (item of panierList; track item.produit.id) {
+        <ion-item>
+          <div class="item-wrapper">
+            <div class="item-line">
+              {{ item.produit.name }} - qté : {{ item.qte }}
+            </div>
+
+            <div class="item-btns">
+              <ion-text id="confirmSupp" color="danger">Supprimer</ion-text>
+              <ion-text>Modifier</ion-text>
+            </div>
+          </div>
+        </ion-item>
+
+      }
+      <ion-button>
+        <ion-label>
+          Valider la commande
+        </ion-label>
+      </ion-button>
+    }
+
+
+  </ion-list>
+  <ion-alert
+    trigger="confirmSupp"
+    header="Confirmer"
+    [buttons]="alertButtons"
+    (didDismiss)="setResult($event)"
+  ></ion-alert>
+
 </ion-content>
