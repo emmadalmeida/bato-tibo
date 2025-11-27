@@ -68,3 +68,15 @@ h1 {
   font-weight: 700;
 
 }
+
+.modal-livraison {
+  --height: auto;
+  --max-height: 150%;
+  --border-radius: 16px;
+  --backdrop-opacity: 0.4;
+  align-items: end;
+  ion-button {
+    --background: transparent;
+  }
+}
+

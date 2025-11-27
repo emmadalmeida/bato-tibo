@@ -16,7 +16,7 @@
     @if (panierList.length > 0) {
       <ion-list>
 
-      @for (item of panierList; track item.produit.id) {
+      @for (item of panierList; track item.produit.id; let i = $index) {
 
         <ion-item>
           <div class="item-wrapper">
@@ -34,8 +34,10 @@
             </div>
 
             <div class="item-btns">
-              <ion-text id="confirmSupp" color="danger">Supprimer</ion-text>
-              <ion-text>Modifier</ion-text>
+              <ion-text color="danger" (click)="openDeleteAlert(i, item)">
+                Supprimer
+              </ion-text>
+              <ion-text (click)="openModifPicker(item)">Modifier</ion-text>
             </div>
           </div>
         </ion-item>
@@ -44,7 +46,10 @@
       <div class="footer-panier">
         <ion-text>Total : {{somme}}€ </ion-text>
 
-        <ion-text>Lieu de livraison : </ion-text>
+        <div class="lieu-livraison">
+          <ion-text>Lieu de livraison : {{lieuChoisi}}</ion-text>
+          <ion-button id="btn-choisir">Choisir</ion-button>
+        </div>
 
         <div class="date-heure">
           <ion-text>Date de livraison : </ion-text>
@@ -66,11 +71,26 @@
     }
 
 
-  <ion-alert
-    trigger="confirmSupp"
-    header="Confirmer"
-    [buttons]="alertButtons"
-    (didDismiss)="setResult($event)"
-  ></ion-alert>
+  <ion-modal #modal trigger="btn-choisir"  (didDismiss)="onDidDismiss($event)" class="modal-livraison">
+    <ng-template>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="modal.dismiss(null, 'cancel')">Cancel</ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="modal.dismiss(lieuChoisi, 'confirm')">Done</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <ion-picker>
+        <ion-picker-column [value]="lieuChoisi" (ionChange)="onIonChange($event)">
+          <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
+
+          @for(lieu of lieuxLivraison ; track lieu) {
+            <ion-picker-column-option [value]="lieu">{{lieu}}</ion-picker-column-option>
+          }
+        </ion-picker-column>
+      </ion-picker>
+    </ng-template>
+  </ion-modal>
 
 </ion-content>
