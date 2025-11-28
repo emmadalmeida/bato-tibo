@@ -57,8 +57,6 @@ export const routes: Routes = [
     path: 'page-restaurant-particulier',
     loadComponent: () => import('./page-restaurant-particulier/page-restaurant-particulier.page').then(m => m.PageRestaurantParticulierPage)
   },
-
-
   {
     path: 'logo-spin',
     loadComponent: () => import('./logo-spin/logo-spin.page').then(m => m.LogoSpinPage)
