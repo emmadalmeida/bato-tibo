@@ -30,7 +30,11 @@
               </ion-text>
             </div>
             <div class="item-prix">
-              {{item.qte}}x{{item.produit.price}}€ : {{item.qte*item.produit.price}}€
+              @if(item.produit.discount > 0){
+                {{item.qte}}x{{item.produit.discount}}€ : {{item.qte*item.produit.discount}}€
+              } @else {
+                {{item.qte}}x{{item.produit.price}}€ : {{item.qte*item.produit.price}}€
+              }
             </div>
 
             <div class="item-btns">
@@ -63,7 +67,7 @@
         </div>
 
 
-        <ion-button expand="block" id="valider">
+        <ion-button expand="block" (click)="checkLivraison()">
           <ion-label>Valider la commande</ion-label>
         </ion-button>
       </div>
@@ -92,12 +96,4 @@
       </ion-picker>
     </ng-template>
   </ion-modal>
-
-  <ion-alert
-    trigger="valider"
-    header="Confirmtion"
-    [buttons]="alertButtons"
-    message="Envoyer votre commande de {{somme}}€ à Thibault ?"
-    (didDismiss)="setResult($event)"
-  ></ion-alert>
 </ion-content>

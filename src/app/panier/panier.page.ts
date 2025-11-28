@@ -38,7 +38,10 @@ export class PanierPage implements OnInit {
     this.loadPaniers()
     console.log(localStorage)
   }
-
+  ionViewWillEnter() {
+    console.log('Panier ionViewWillEnter -> rechargement du panier');
+    this.loadPaniers();
+  }
   onIonChange(event: CustomEvent) {
     this.lieuChoisi = event.detail.value;
   }
@@ -67,7 +70,7 @@ export class PanierPage implements OnInit {
   calculSomme(){
     this.somme = 0;
     this.panierList.forEach(element => {
-      this.somme += element.produit.price*element.qte
+      element.produit.discount > 0 ? this.somme += element.produit.discount*element.qte : this.somme += element.produit.price*element.qte;
     })
   }
 
@@ -130,28 +133,6 @@ export class PanierPage implements OnInit {
 
     await alert.present();
   }
-
-
-
-
-  public alertButtons = [
-    {
-      text: 'Non',
-      role: 'cancel',
-      handler: () => {
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'Oui',
-      role: 'confirm',
-      handler: () => {
-        this.envoiAlert();
-        localStorage.clear()
-        this.panierList = [];
-      },
-    },
-  ];
   async envoiAlert() {
     const alert = await this.alertController.create({
       header: 'Commande envoyée',
@@ -162,7 +143,48 @@ export class PanierPage implements OnInit {
     await alert.present();
   }
 
-  setResult(event: CustomEvent<OverlayEventDetail>) {
-    console.log(`Dismissed with role: ${event.detail.role}`);
+  checkLivraison(){
+    console.log(this.lieuChoisi === '')
+    this.lieuChoisi === '' ? this.openChoixLieuAlert() : this.openValidationAlert();
   }
+
+  async openChoixLieuAlert() {
+    const alert = await this.alertController.create({
+      header: 'Lieu de livraison',
+      message: 'Veuillez choisir un lieu de livraison.',
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel'
+        }
+      ]
+    })
+    await alert.present();
+
+  }
+
+  async openValidationAlert() {
+    const alert = await this.alertController.create({
+      header: 'Confirmation',
+      message: `Envoyer votre commande de ${this.somme}€ à Thibault ?`,
+      buttons: [
+        {
+          text: 'Non',
+          role: 'cancel'
+        },
+        {
+          text: 'Oui',
+          role: 'confirm',
+          handler: () => {
+            this.envoiAlert();
+            localStorage.clear();
+            this.panierList = [];
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 }
