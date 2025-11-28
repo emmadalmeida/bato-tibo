@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonImg, IonItem } from '@ionic/angular/standalone';
-import { BateauService } from '../services/bateau';
 import { Recette } from '../models/recette';
 import { TabsPage } from '../tabs/tabs.page';
 import { RecetteService } from '../services/recette.services';
