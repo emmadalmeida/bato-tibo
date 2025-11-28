@@ -59,6 +59,14 @@ export class ListeProduitsPage implements OnInit {
             this.listeProduits.push(produit)
           }
         })
+
+        if(this.listeProduits.length < 1) {
+          data.produits?.forEach(produit => {
+            if(produit.discount > 0) {
+              this.listeProduits.push(produit)
+            }
+          })
+        }
       },
       error: error => console.log(error),
     })

@@ -29,6 +29,30 @@ ion-badge {
   align-content: center;
 }
 
+.barre {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: red;
+}
+.discount {
+  position: absolute;
+  margin-top: 63px;
+  margin-right: 20px;
+  transform: translate(0, 0);
+  right: 0;
+  --background: #CBF3BB;
+  --color: #323232;
+  font-size: 0.9rem;
+  padding: 4px 6px;
+  border-radius: 100px;
+  z-index: 10;
+  height: 35px;
+  width: 35px;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+}
+
 
 ion-content {
   margin: 5px;
