@@ -20,6 +20,14 @@ ion-item {
   }
 
 }
+.fish-icon {
+  mask-image: url('../../assets/svgs/fish-alt.svg');
+  -webkit-mask-image: url('../../assets/svgs/fish-alt.svg');
+  background-color: #ffffff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
 
 ion-toolbar {
   --background: rgba(168, 138, 138, 0);
@@ -27,5 +35,8 @@ ion-toolbar {
   ion-button {
     --background: rgba(168, 138, 138, 0);
   }
+
+
+
 }
 

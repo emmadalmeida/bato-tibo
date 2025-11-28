@@ -18,10 +18,10 @@ export class TiboHeaderComponent implements OnInit {
   ngOnInit() { }
 
   onLoadCart() {
-    this.router.navigate(['/panier']);
+    this.router.navigate(['tabs/panier']);
   }
 
   onLoadAccueil() {
-    this.router.navigate(['/tab1']);
+    this.router.navigate(['tabs/tab1']);
   }
 }

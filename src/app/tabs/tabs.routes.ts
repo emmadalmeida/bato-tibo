@@ -12,6 +12,10 @@ export const routes: Routes = [
           import('../tab1/tab1.page').then((m) => m.Tab1Page),
       },
       {
+        path: 'panier',
+        loadComponent: () => import('../panier/panier.page').then(m => m.PanierPage)
+      },
+      {
         path: 'tab2',
         loadComponent: () =>
           import('../tab2/tab2.page').then((m) => m.Tab2Page),
