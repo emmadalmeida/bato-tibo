@@ -38,7 +38,10 @@ export class PanierPage implements OnInit {
     this.loadPaniers()
     console.log(localStorage)
   }
-
+  ionViewWillEnter() {
+    console.log('Panier ionViewWillEnter -> rechargement du panier');
+    this.loadPaniers();
+  }
   onIonChange(event: CustomEvent) {
     this.lieuChoisi = event.detail.value;
   }
@@ -67,7 +70,7 @@ export class PanierPage implements OnInit {
   calculSomme(){
     this.somme = 0;
     this.panierList.forEach(element => {
-      this.somme += element.produit.price*element.qte
+      element.produit.discount > 0 ? this.somme += element.produit.discount*element.qte : this.somme += element.produit.price*element.qte;
     })
   }
 
@@ -157,6 +160,30 @@ export class PanierPage implements OnInit {
       header: 'Commande envoyée',
       message: 'Votre commande a bien été envoyée.',
       buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async openValidationAlert() {
+    const alert = await this.alertController.create({
+      header: 'Confirmation',
+      message: `Envoyer votre commande de ${this.somme}€ à Thibault ?`,
+      buttons: [
+        {
+          text: 'Non',
+          role: 'cancel'
+        },
+        {
+          text: 'Oui',
+          role: 'confirm',
+          handler: () => {
+            this.envoiAlert();
+            localStorage.clear();
+            this.panierList = [];
+          }
+        }
+      ]
     });
 
     await alert.present();
