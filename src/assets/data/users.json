@@ -1,0 +1,12 @@
+{
+  "users" : [
+    {
+      "id" : "test",
+      "mdp" : "test"
+    },
+    {
+      "id" : "BiGGui",
+      "mdp" : "gui"
+    }
+  ]
+}

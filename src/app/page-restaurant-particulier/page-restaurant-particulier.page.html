@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+  <ng-container>
+    <h1>{{ selectedRestaurant?.nom }}</h1>
+    <div class="restaurant-content">
+      <ion-img [src]="selectedRestaurant?.imgUrl"></ion-img>
+    </div>
+    <ion-item>
+      <div>
+        <h3><b>Proprietaire :</b> {{ selectedRestaurant?.proprietaire }}</h3>
+        <h3><b>Localisation :</b> {{ selectedRestaurant?.localisation }}</h3>
+        <h3><b>Contact :</b> {{ selectedRestaurant?.contact }}</h3>
+      </div>
+    </ion-item>
+  </ng-container>
+</ion-content>

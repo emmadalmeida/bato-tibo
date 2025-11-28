@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <ng-container>
+    <h1>{{ selectedRecette?.nom }}</h1>
+    <div class="recette-content">
+      <ion-img [src]="selectedRecette?.imgUrl"></ion-img>
+    </div>
+    <ion-item>
+      <div>
+        <h3><b>Recette :</b></h3>
+        <p style="text-align: justify;">{{ selectedRecette?.recette }}
+      </div>
+    </ion-item>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,31 @@
+{
+  "recette": [
+    {
+      "id": 1,
+      "nom": "Homard",
+      "recette": "Faites cuire les homards dans l'eau bouillante avec du thym, du laurier, du sel et du poivre de Cayenne. Laissez cuire 20 minutes. Égouttez-les et laissez-les refroidir. Découpez les coffres des homards dans le sens de la longueur. Mélangez la mayonnaise avec le cognac, le corail et la ciboulette ciselée.",
+      "imgUrl" : "assets/images/homardRecette_icon.png"
+    },
+    {
+      "id": 2,
+      "nom": "Saint-Jacques",
+      "recette": "Faire fondre du beurre avec des échalotes puis ajouter les noix de Saint-Jacques. Les faire revenir en laissant le milieu translucide puis les retirer du feu. Ajouter l'ail et le persil dans la poêle et laisser cuire quelques secondes. Bien faire chauffer la poêle, puis flamber au Cognac. Une fois la flamme éteinte, ajouter les noix de Saint-Jacques. Il ne faut pas les flamber car elles perdraient leurs saveur. Déguster chaud nature ou accompagné d'une fondue de poireaux.",
+      "imgUrl" : "assets/images/saintJacques_icon.png"
+
+
+    },
+    {
+      "id": 3,
+      "nom": "Bar",
+      "recette": "Sur une plaque ou un plat allant au four, disposer quelques feuilles de laurier frais, verser un filet d'huile d'olive et du gros sel. Disposer le bar, puis l'arroser d'un filet d'huile d'olive et mettre un peu de gros sel sur la peau.Cuire au four pendant 12 min à 240°C.",
+      "imgUrl" : "assets/images/barRecette_icon.png"
+
+    },
+    {
+      "id": 4,
+      "nom": "Tourteau",
+      "recette": "Ouvrir le tourteau déjà cuit, récupérer soigneusement toute la chair dans les pinces, les pattes et le coffre, puis l'émietter grossièrement dans un bol. Arroser d'un filet de jus de citron pour réveiller les saveurs, ajouter une pointe de sel et de poivre, puis mélanger délicatement pour ne pas écraser la chair. Laisser reposer une minute afin que le citron imprègne légèrement le crabe sans le masquer. Servir aussitôt, nature pour profiter pleinement de son goût ou accompagné d'une cuillerée de mayonnaise bien fraîche.",
+      "imgUrl" : "assets/images/tourteau.png"
+    }
+  ]
+}

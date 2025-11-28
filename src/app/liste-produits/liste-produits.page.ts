@@ -52,13 +52,20 @@ export class ListeProduitsPage implements OnInit {
   ngOnInit() {
     this.produitsServices.getProduits().subscribe({
       next: data => {
-        console.log(data);
-        data.produits?.forEach(produit => {
+        if(this.type !== 3){
+          data.produits?.forEach(produit => {
 
-          if (produit.category === this.type) {
-            this.listeProduits.push(produit)
-          }
-        })
+            if (produit.category === this.type) {
+              this.listeProduits.push(produit)
+            }
+          })
+        } else {
+          data.produits?.forEach(produit => {
+            if(produit.discount > 0) {
+              this.listeProduits.push(produit)
+            }
+          })
+        }
       },
       error: error => console.log(error),
     })
