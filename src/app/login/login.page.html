@@ -2,7 +2,7 @@
   <ion-img src="../assets/logos/bato_tibo_logo_bleu.png" class="logo"></ion-img>
   <h2 class="title-login">Connexion</h2>
   <ion-input placeholder="Identifiant" class="identifiant" [(ngModel)]="identifiant"></ion-input>
-    <ion-input placeholder="Mot de passe" class="mot-de-passe" [(ngModel)]="motDePasse"></ion-input>
+    <ion-input placeholder="Mot de passe" type="password" class="mot-de-passe" [(ngModel)]="motDePasse"></ion-input>
 
   <ion-button shape="round" class="connect-button" (click)="findUser()">
     Se connecter
