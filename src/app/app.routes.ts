@@ -52,7 +52,11 @@ export const routes: Routes = [
   {
     path: 'recette-particuliere',
     loadComponent: () => import('./recette-particuliere/recette-particuliere.page').then( m => m.RecetteParticulierePage)
+  },  {
+    path: 'page-restaurant-particulier',
+    loadComponent: () => import('./page-restaurant-particulier/page-restaurant-particulier.page').then( m => m.PageRestaurantParticulierPage)
   },
+
 
 
 

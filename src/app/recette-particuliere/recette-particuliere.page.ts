@@ -24,14 +24,9 @@ export class RecetteParticulierePage implements OnInit {
 
   ngOnInit() {
     const nomFromState = history.state.nomRecette;
-        console.log("coucoubisous1 ", nomFromState);
-
-        console.log("coucoubisous liste avant ", this.recetteService);
-
 
     this.recetteService.getRecette().subscribe({
       next: (data) => {
-        console.log("coucoubisous2 ", data?data:null);
 
         this.listeRecette = data.recette;
 
@@ -44,8 +39,6 @@ export class RecetteParticulierePage implements OnInit {
         if (!this.selectedRecette && this.listeRecette.length > 0) {
           this.selectedRecette = this.listeRecette[0];
         }
-
-        console.log('selectedRecette', this.selectedRecette);
       },
       error: (err) => console.error(err)
     });

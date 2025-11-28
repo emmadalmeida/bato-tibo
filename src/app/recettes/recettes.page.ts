@@ -32,7 +32,6 @@ export class RecettesPage implements OnInit {
   }
 
   goToPageRecetteParticuliere(nomRecette: string) {
-    console.log("coucoubisous ", nomRecette);
     // Navigue vers la page de la recette particulière en passant `nomRecette` comme paramètre de route
     this.router.navigate(['/recette-particuliere'], { state: { nomRecette } });
   }
