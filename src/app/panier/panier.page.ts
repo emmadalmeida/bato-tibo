@@ -39,7 +39,6 @@ export class PanierPage implements OnInit {
     console.log(localStorage)
   }
   ionViewWillEnter() {
-    console.log('Panier ionViewWillEnter -> rechargement du panier');
     this.loadPaniers();
   }
   onIonChange(event: CustomEvent) {
@@ -60,11 +59,25 @@ export class PanierPage implements OnInit {
       const value = localStorage.getItem(key);
       if (!value) continue;
 
+      try {
+        const item = JSON.parse(value);
 
-      const item = JSON.parse(value);
-      this.panierList.push(item);
+        if (!item || !item.produit || !item.produit.name) {
+          console.log("Suppression d'un item invalide :", key, value);
+          localStorage.removeItem(key);
+          continue;
+        }
+
+        this.panierList.push(item);
+
+      } catch (e) {
+        console.log("Suppression d'un item non JSON :", key, value);
+        localStorage.removeItem(key);
+        continue;
+      }
     }
-    this.calculSomme()
+
+    this.calculSomme();
   }
 
   calculSomme(){
