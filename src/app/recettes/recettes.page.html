@@ -11,13 +11,12 @@
 
 
   <ion-list lines="none">
-    <app-custom-button titre="Homard" urlimg="../../assets/images/homardRecette_icon.png"></app-custom-button>
+    <app-custom-button titre="Homard" urlimg="../../assets/images/homardRecette_icon.png" (click)="goToPageRecetteParticuliere('Homard')"></app-custom-button>
+      
+    <app-custom-button titre="Saint-Jacques" urlimg="../../assets/images/saintJacques_icon.png" (click)="goToPageRecetteParticuliere('Saint-Jacques')"></app-custom-button>
 
-    <app-custom-button titre="Saint-Jacques" urlimg="../../assets/images/saintJacques_icon.png"></app-custom-button>
-
-    <app-custom-button titre="Bar" urlimg="../../assets/images/barRecette_icon.png"></app-custom-button>
-
-    <app-custom-button titre="Tourteau" urlimg="../../assets/images/tourteau.png"></app-custom-button>
+    <app-custom-button titre="Bar" urlimg="../../assets/images/barRecette_icon.png" (click)="goToPageRecetteParticuliere('Bar')"></app-custom-button>
+    <app-custom-button titre="Tourteau" urlimg="../../assets/images/tourteau.png" (click)="goToPageRecetteParticuliere('Tourteau')"></app-custom-button>
   </ion-list>
 
 

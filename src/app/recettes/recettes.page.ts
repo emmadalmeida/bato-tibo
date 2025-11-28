@@ -12,6 +12,7 @@ import {
   IonToolbar
 } from '@ionic/angular/standalone';
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,9 +24,17 @@ import { CustomButtonComponent } from "../custom-button/custom-button.component"
 })
 export class RecettesPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+
+   }
 
   ngOnInit() {
+  }
+
+  goToPageRecetteParticuliere(nomRecette: string) {
+    console.log("coucoubisous ", nomRecette);
+    // Navigue vers la page de la recette particulière en passant `nomRecette` comme paramètre de route
+    this.router.navigate(['/recette-particuliere'], { state: { nomRecette } });
   }
 
 }
