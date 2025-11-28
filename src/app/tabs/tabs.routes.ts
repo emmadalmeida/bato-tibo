@@ -52,14 +52,14 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '../logo-spin/logo-spin.page',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '../logo-spin/logo-spin.page',
     pathMatch: 'full',
   },
 ];
