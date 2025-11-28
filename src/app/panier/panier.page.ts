@@ -133,28 +133,6 @@ export class PanierPage implements OnInit {
 
     await alert.present();
   }
-
-
-
-
-  public alertButtons = [
-    {
-      text: 'Non',
-      role: 'cancel',
-      handler: () => {
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'Oui',
-      role: 'confirm',
-      handler: () => {
-        this.envoiAlert();
-        localStorage.clear()
-        this.panierList = [];
-      },
-    },
-  ];
   async envoiAlert() {
     const alert = await this.alertController.create({
       header: 'Commande envoyée',
@@ -163,6 +141,26 @@ export class PanierPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  checkLivraison(){
+    console.log(this.lieuChoisi === '')
+    this.lieuChoisi === '' ? this.openChoixLieuAlert() : this.openValidationAlert();
+  }
+
+  async openChoixLieuAlert() {
+    const alert = await this.alertController.create({
+      header: 'Lieu de livraison',
+      message: 'Veuillez choisir un lieu de livraison.',
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel'
+        }
+      ]
+    })
+    await alert.present();
+
   }
 
   async openValidationAlert() {
@@ -189,7 +187,4 @@ export class PanierPage implements OnInit {
     await alert.present();
   }
 
-  setResult(event: CustomEvent<OverlayEventDetail>) {
-    console.log(`Dismissed with role: ${event.detail.role}`);
-  }
 }
